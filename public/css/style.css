@@ -1,0 +1,121 @@
+.main_menu_wrapper {
+    background-color: #ccc;
+    padding-bottom: 5px;
+}
+
+.main_menu {
+    list-style-type: none;
+    display: inline;
+
+}
+
+.main_menu li {
+    display: inline;
+    margin-right: 50px;
+
+}
+
+.main_wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.order_table {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    text-align: center;
+    cursor: pointer;
+    width: 1000px;
+    border: #555 1px solid
+}
+
+.order_table_header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    text-align: center;
+    cursor: pointer;
+    cursor: default;
+    width: 1000px;
+}
+
+.order_table:hover {
+    background-color: coral;
+}
+
+
+.order_number {
+    width: 50px;
+}
+
+.order_date_time {
+    width: 150px;
+}
+
+.order_paid {
+    width: 100px;
+}
+
+.order_fio {
+    width: 200px;
+}
+
+.order_phone {
+    width: 150px;
+}
+
+.order_email {
+    width: 150px;
+}
+
+.order_price {
+    width: 100px;
+}
+
+.table_header {
+    background-color: #555;
+    color: #fff;
+    margin-top: 20px;
+    width: 1000px;
+}
+
+.products_table_header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    width: 600px;
+}
+
+.product_name {
+    width: 150px;
+}
+
+.product_description {
+    width: 250px;
+}
+
+.product_price {
+    width: 100px;
+}
+
+.products_table {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 600px;
+    border: 1px solid #aaa;
+    text-align: center;
+}
+
+.order_description {
+    width: 250px;
+}
+
+.form_input {
+    display: block;
+    margin-bottom: 5px;
+}
