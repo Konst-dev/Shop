@@ -18,6 +18,7 @@ class Controller
     {
         $this->action = $action ?: $this->defaultAction;
         $method = 'action' . ucfirst($this->action);
+
         if (method_exists($this, $method)) {
             $this->$method();
         } else echo '<h1 style="text-align:center">ОШИБКА: Метод не найден!</h1>';

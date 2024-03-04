@@ -9,12 +9,18 @@ use app\models\{Users, Orders, Products, Product_order};
 class ShopController extends Controller
 {
 
+    /**
+     * Выдает JSON со всеми заказами
+     */
     protected function actionGetOrders()
     {
         $orders = Orders::getAllJoin(Users::getTableName(), 'user_id', 'id');
         echo json_encode($orders, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Выдает Общую стоимость заказа. Вход: id методом POST
+     */
     protected function actionGetOrderPrice()
     {
         $req = new Request();
@@ -28,6 +34,9 @@ class ShopController extends Controller
         echo json_encode(['id' => 'price_' . $order_id, 'price' => $sum], JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Показывает страницу с информацией о заказе.
+     */
     protected function actionOrder()
     {
         $req = new Request();
@@ -38,6 +47,9 @@ class ShopController extends Controller
         echo $this->render('order', ['order' => $order[0], 'products' => $products, 'order_id' => $order_id]);
     }
 
+    /**
+     * Показывает страницу с данными покупателя
+     */
     protected function actionUser()
     {
         $req = new Request();
@@ -47,6 +59,9 @@ class ShopController extends Controller
         echo $this->render('user', ['user' => $user[0]]);
     }
 
+    /**
+     * Возвращает JSON с заказами покупателя. Вход: id методом POST
+     */
     protected function actionGetUserOrders()
     {
         $req = new Request();
@@ -56,6 +71,9 @@ class ShopController extends Controller
         echo json_encode($orders, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Cохраняет новый заказ с формы. Возвращает JSON с обновленным списком заказов
+     */
     protected function actionNewOrder()
     {
         $req = new Request();

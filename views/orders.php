@@ -53,35 +53,3 @@
 
 
 </div>
-<?php
-
-//var_dump($orders);
-
-// $link = mysqli_connect("localhost", "root", "", "shop_test");
-// if ($link) echo "OK";
-// else echo "False";
-// $result = mysqli_query($link, "USE `shop_test`");
-// if ($result) echo "OK";
-// else echo "False";
-
-// $result = mysqli_query($link, "CREATE TABLE shop_test.`products` (`id` int(11) not null auto_increment,
-//     `name` varchar(128), 
-//     `description` text(1000),
-//     `price` float,
-//      primary key(`id`))");
-
-// $result = mysqli_query($link, "CREATE TABLE shop_test.`orders` (`id` int(11) not null AUTO_INCREMENT,
-//     `date_time` TIMESTAMP,
-//     `is_paid` BOOLEAN,
-//     `user_id` INT(11),
-//     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-//     primary key(`id`))");
-
-// $result = mysqli_query(
-//     $link,
-//     "CREATE TABLE shop_test.`product_order` (
-//     `product_id` INT(11),
-//     `order_id` INT(11),
-//     FOREIGN KEY (product_id) REFERENCES products(id),
-//     FOREIGN KEY (order_id) REFERENCES orders(id))"
-// );

@@ -14,12 +14,6 @@ abstract class DBModel extends Model
         $sql = "DELETE FROM {$tablename}";
         return Db::getInstance()->queryClear($sql, []);
     }
-    // public static function getWhere($name, $value)
-    // {
-    //     $tablename = static::getTableName();
-    //     $sql = "SELECT * FROM {$tablename} WHERE {$name}=:{$name}";
-    //     return Db::getInstance()->queryWhere($sql, [$name => $value], static::class);
-    // }
 
     public static function getWhereAssoc($name, $value)
     {
@@ -28,26 +22,12 @@ abstract class DBModel extends Model
         return Db::getInstance()->queryWhereAssoc($sql, [$name => $value]);
     }
 
-    /**
-     * 
-     */
     public static function getWhereAssocJoin($table, $name, $value, $table2_name, $key1, $key2)
     {
         $tablename = static::getTableName();
         $sql = "SELECT * FROM {$tablename} INNER JOIN {$table2_name} ON {$tablename}.{$key1}={$table2_name}.{$key2} WHERE {$table}.{$name}=:{$name}";
         return Db::getInstance()->queryWhereAssoc($sql, [$name => $value]);
     }
-
-    // public static function getWhereCmpAssoc($name, $sign, $value)
-    // {
-    //     $tablename = static::getTableName();
-    //     if ($sign == '>')
-    //         $sql = "SELECT * FROM {$tablename} WHERE {$name}>:{$name}";
-    //     else if ($sign == '<')
-    //         $sql = "SELECT * FROM {$tablename} WHERE {$name}<:{$name}";
-    //     else $sql = "SELECT * FROM {$tablename} WHERE {$name}=:{$name}";
-    //     return Db::getInstance()->queryWhereAssoc($sql, [$name => $value]);
-    // }
 
     public static function getOne($id)
     {
@@ -63,9 +43,6 @@ abstract class DBModel extends Model
         return Db::getInstance()->queryAll($sql);
     }
 
-    /**
-     * 
-     */
     public static function getAllJoin($table2_name, $key1, $key2)
     {
         $tablename = static::getTableName();
@@ -73,12 +50,6 @@ abstract class DBModel extends Model
         return Db::getInstance()->queryAll($sql);
     }
 
-    // public static function getAllClass()
-    // {
-    //     $tablename = static::getTableName();
-    //     $sql = "SELECT * FROM {$tablename}";
-    //     return Db::getInstance()->queryAllClass($sql, static::class, []);
-    // }
 
     protected function insert()
     {

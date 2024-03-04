@@ -9,8 +9,9 @@ use app\models\{Users, Orders, Products, Product_order};
 class MainController extends Controller
 {
 
-
-
+    /**
+     * Выводит главную страницу со списком заказов
+     */
     protected function actionIndex()
     {
         $products = Products::getAll();
@@ -107,8 +108,5 @@ class MainController extends Controller
             );
             $product_order->save();
         }
-
-
-        //var_dump($names);
     }
 }
